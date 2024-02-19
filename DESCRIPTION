@@ -1,0 +1,22 @@
+Package: sescbthesis
+Type: Package
+Title: Calculate simultaneous confidence bands for survival functions with 
+  bootstrap approaches and semiparametric estimators
+Version: 0.1.0
+Authors@R: person("Jennifer", "Schwan", email = "schwan@fh-aachen.de", role = c("aut", "cre"))
+Description: This package includes what is needed for my masters thesis.
+  This means different semiparamtertic estimators for survival functions, 
+  functions to calculate different types of simultaneous confidence bands, 
+  function to plot these things as well as functions to calculate statistics 
+  used to compare the scbs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    magrittr,
+    stats
