@@ -20,3 +20,5 @@ Imports:
     dplyr,
     magrittr,
     stats
+URL: https://github.com/jenniferschwan/sescbthesis
+BugReports: https://github.com/jenniferschwan/sescbthesis/issues
