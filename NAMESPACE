@@ -2,6 +2,7 @@
 
 export("%>%")
 export(SCB_subramanian_type1)
+export(SCB_subramanian_type3)
 export(calculate_mle_srcm)
 export(estimator_dikta16)
 export(estimator_dikta96)
