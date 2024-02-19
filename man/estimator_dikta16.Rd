@@ -5,17 +5,17 @@
 \title{Calculates the semiparametric estimator for survival functions
 given by Dikta, Reißel and Harlass (2016)}
 \usage{
-estimator_dikta16(surv_data, modelfunction, mle)
+estimator_dikta16(surv_data, mle, modelfunction)
 }
 \arguments{
-\item{surv_data}{input data, needs to have the properties time and event}
-
-\item{modelfunction}{the modelfunction used for the srcm}
+\item{surv_data}{input data, needs to have the properties 'time' and 'event'}
 
 \item{mle}{the mle of surv_data for the modelfunction}
+
+\item{modelfunction}{the modelfunction used for the srcm}
 }
 \value{
-surv_data with additional columns rank and estimated_survival
+surv_data with additional columns 'rank' and 'estimated_survival'
 }
 \description{
 Calculates the semiparametric estimator for survival functions
@@ -24,5 +24,5 @@ given by Dikta, Reißel and Harlass (2016)
 \examples{
 surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
 mle <- calculate_mle_srcm(surv_data, gph)
-estimator_dikta16(surv_data, gph, mle)
+estimator_dikta16(surv_data, mle, gph)
 }

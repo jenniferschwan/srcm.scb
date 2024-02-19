@@ -1,6 +1,6 @@
 #' Calculates the MLE for the given data and modelfunction under SRCM
 #'
-#' @param surv_data the given survival_data. Needs to have the properties time and event
+#' @param surv_data the given survival_data, needs to have the properties 'time' and 'event'
 #' @param modelfunction the modelfunction used for the srcm
 #'
 #' @return the mle of surv_data for the given modelfunction
@@ -10,6 +10,8 @@
 #' surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
 #' calculate_mle_srcm(surv_data, gph)
 calculate_mle_srcm <- function(surv_data, modelfunction) {
+  checkmate::assert_names(names(surv_data), must.include = c("time", "event"))
+
   stats::optim(
     par = c(1, 1),
     fn = negLL_srcm,

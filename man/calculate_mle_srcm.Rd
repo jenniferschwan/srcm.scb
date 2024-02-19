@@ -7,7 +7,7 @@
 calculate_mle_srcm(surv_data, modelfunction)
 }
 \arguments{
-\item{surv_data}{the given survival_data. Needs to have the properties time and event}
+\item{surv_data}{the given survival_data, needs to have the properties 'time' and 'event'}
 
 \item{modelfunction}{the modelfunction used for the srcm}
 }
