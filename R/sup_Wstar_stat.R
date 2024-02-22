@@ -1,4 +1,5 @@
 #' The statistic which provides the supremum of W*
+#' @noRd
 #'
 #' @param surv_data the original data, must contain columns 'time', 'event' and 'estimated_survival'
 #' @param boot_data the bootstrapped data, must contain columns 'time', 'event' and 'estimated_survival'
@@ -8,7 +9,7 @@ sup_Wstar_stat <- function(surv_data, boot_data) {
   checkmate::assert_names(names(surv_data), must.include = c("time", "event", "estimated_survival"))
   checkmate::assert_names(names(boot_data), must.include = c("time", "event", "estimated_survival"))
 
-  n <- length(surv_data$time)
+  n <- nrow(surv_data)
   S1 <- surv_data$estimated_survival
   # S2 are the bootstrap estimated values at original data times
   S2 <- sapply(

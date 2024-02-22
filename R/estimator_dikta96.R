@@ -16,7 +16,7 @@ estimator_dikta96 <- function(surv_data, mle, modelfunction) {
   checkmate::assert_names(names(surv_data), must.include = c("time", "event"))
   checkmate::assert_names(names(surv_data), disjunct.from = "estimated_survival")
 
-  n <- length(surv_data$time)
+  n <- nrow(surv_data)
   surv_data %>%
     dplyr::mutate(rank = rank(time, ties.method = "average")) %>%
     dplyr::arrange(time) %>%

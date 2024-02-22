@@ -28,12 +28,12 @@ SCB_subramanian_type3 <- function(surv_data,
 
   mle <- calculate_mle_srcm(surv_data, modelfunction)
   surv_data <- estimatorfunction(surv_data, mle, modelfunction)
-  n <- length(surv_data$time)
+  n <- nrow(surv_data)
 
   boot_Ws <- sort(
     replicate(
       n_boot,
-      bootstrap(
+      bootstrap_srcm(
         surv_data, mle,
         estimatorfunction, modelfunction, sup_Wstar_stat
       )

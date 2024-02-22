@@ -22,6 +22,7 @@ calculate_mle_srcm <- function(surv_data, modelfunction) {
 }
 
 #' the negative log-likelihood-function under SRCM
+#' @noRd
 #'
 #' @param par the parameter for modelfunction
 #' @param surv_data the given survival_data. Needs to have the properties time and event
