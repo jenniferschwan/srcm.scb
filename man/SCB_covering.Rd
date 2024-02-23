@@ -4,12 +4,12 @@
 \alias{SCB_covering}
 \title{Checks whether the SCB fully covers the true survival function or not}
 \usage{
-SCB_covering(SCB, true_S)
+SCB_covering(SCB, S_true)
 }
 \arguments{
 \item{SCB}{the given SCB, must contain the columns 'time', 'SCB_low' and 'SCB_high'}
 
-\item{true_S}{the true survival function}
+\item{S_true}{the true survival function}
 }
 \value{
 TRUE if the SCB fully covers the true survival function, FALSE if not
