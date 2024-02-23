@@ -13,11 +13,9 @@ SCB_get_quantile_subset <- function(SCB, lower_quantile = 0, upper_quantile = 1)
   checkmate::assert_double(upper_quantile, lower = 0, upper = 1)
 
   idx <- which(
-    SCB$time >= SCB$time[floor(nrow(SCB) * lower_quantile) + 1]
-    &
-    SCB$time <= SCB$time[floor(nrow(SCB) * upper_quantile)]
-    )
+    SCB$time >= SCB$time[floor(nrow(SCB) * lower_quantile) + 1] &
+      SCB$time <= SCB$time[floor(nrow(SCB) * upper_quantile)]
+  )
 
   dplyr::slice(SCB, idx)
-
 }

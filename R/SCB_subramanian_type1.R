@@ -36,7 +36,7 @@ SCB_subramanian_type1 <- function(surv_data,
       bootstrap_srcm(
         surv_data, mle,
         estimatorfunction, modelfunction, sup_Wstar_stat
-        )
+      )
     )
   )
   q_alpha <- boot_Ws[floor((1 - alpha) * n_boot)]

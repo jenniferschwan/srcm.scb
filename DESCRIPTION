@@ -19,7 +19,9 @@ Config/testthat/edition: 3
 Imports: 
     checkmate,
     dplyr,
+    ggplot2,
     magrittr,
+    qwraps2,
     stats
 URL: https://github.com/jenniferschwan/sescbthesis
 BugReports: https://github.com/jenniferschwan/sescbthesis/issues
