@@ -4,6 +4,8 @@
 #' @param S_true the true survival function
 #'
 #' @return TRUE if the SCB fully covers the true survival function, FALSE if not
+#' @export
+#'
 SCB_covering <- function(SCB, S_true) {
   checkmate::assert_names(names(SCB), must.include = c("time", "SCB_low", "SCB_high"))
 

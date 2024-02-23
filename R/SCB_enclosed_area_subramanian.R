@@ -4,6 +4,8 @@
 #' @param SCB the given SCB, must contain the columns 'time', 'SCB_low' and 'SCB_high'
 #'
 #' @return the area enclosed by the given SCB
+#' @export
+#'
 SCB_enclosed_area_subramanian <- function(SCB) {
   checkmate::assert_names(names(SCB), must.include = c("time", "SCB_low", "SCB_high"))
 

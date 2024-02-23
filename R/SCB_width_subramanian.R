@@ -4,6 +4,8 @@
 #' @param SCB the given SCB, must contain the columns 'estimated_survival', 'SCB_low' and 'SCB_high'
 #'
 #' @return the width of the given SCB
+#' @export
+#'
 SCB_width_subramanian <- function(SCB) {
   checkmate::assert_names(names(SCB), must.include = c("estimated_survival", "SCB_low", "SCB_high"))
 

@@ -5,6 +5,8 @@
 #' @param upper_quantile the upper quantile (between 0 and 1)
 #'
 #' @return A subset of the input SCB
+#' @export
+#'
 SCB_get_quantile_subset <- function(SCB, lower_quantile = 0, upper_quantile = 1) {
   checkmate::assert_names(names(SCB), must.include = "time")
   checkmate::assert_double(lower_quantile, lower = 0, upper = 1)
