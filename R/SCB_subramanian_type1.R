@@ -34,8 +34,9 @@ SCB_subramanian_type1 <- function(surv_data,
     replicate(
       n_boot,
       bootstrap_srcm(
+        sup_Wstar_stat,
         surv_data, mle,
-        estimatorfunction, modelfunction, sup_Wstar_stat
+        estimatorfunction, modelfunction
       )
     )
   )
