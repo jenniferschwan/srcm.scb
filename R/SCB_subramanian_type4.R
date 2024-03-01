@@ -48,10 +48,10 @@ SCB_subramanian_type4 <- function(surv_data,
   inner_exponent <- 1 / sqrt(n) * q_alpha * sqrt(surv_data$estimated_var) / (log(surv_data$estimated_survival))
   #inner_exponent[surv_data$estimated_survival == 0] = -Inf # weil sonst NaN hier Grenzwert einsetzen
 
-  surv_data %>%
-    dplyr::mutate(
+  surv_data <- dplyr::mutate(surv_data,
       SCB_low = pmax(0, estimated_survival^exp(-inner_exponent)),
       SCB_high = pmin(1, estimated_survival^exp(inner_exponent))
-    ) %>%
-    dplyr::select(!estimated_var) #remove estimated variance from surv_data
+    )
+  surv_data$SCB_high[n] <- surv_data$SCB_high[n-1]
+  dplyr::select(surv_data, !estimated_var) #remove estimated variance from surv_data
 }
