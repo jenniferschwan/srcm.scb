@@ -6,6 +6,7 @@
 \usage{
 draw_SCB(
   SCB,
+  name = "SCB",
   plt = ggplot2::ggplot(),
   S_true = NULL,
   x_lims = NULL,
