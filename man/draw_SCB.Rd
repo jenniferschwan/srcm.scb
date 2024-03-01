@@ -7,6 +7,7 @@
 draw_SCB(
   SCB,
   name = "SCB",
+  title = "SCB",
   plt = ggplot2::ggplot(),
   S_true = NULL,
   x_lims = NULL,

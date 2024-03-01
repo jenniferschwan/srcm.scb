@@ -1,3 +1,16 @@
+#' Title
+#'
+#' @param surv_data
+#' @param estimatorfunction
+#' @param modelfunction
+#' @param modelfunction_gradient
+#' @param alpha
+#' @param n_boot
+#'
+#' @return
+#' @export
+#'
+#' @examples
 SCB_subramanian_type2 <- function(surv_data,
                                   estimatorfunction, modelfunction, modelfunction_gradient,
                                   alpha, n_boot) {
