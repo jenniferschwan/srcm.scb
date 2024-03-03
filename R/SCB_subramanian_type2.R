@@ -46,9 +46,9 @@ SCB_subramanian_type2 <- function(surv_data,
   q_alpha <- boot_W2s[floor((1 - alpha) * n_boot)]
 
   surv_data <- dplyr::mutate(surv_data,
-      SCB_low = pmax(0, estimated_survival - 1 / sqrt(n) * estimated_survival * sqrt(estimated_var) * q_alpha),
-      SCB_high = pmin(1, estimated_survival + 1 / sqrt(n) * estimated_survival * sqrt(estimated_var) * q_alpha)
-    )
-  surv_data$SCB_high[n] <- pmin(1, surv_data$estimated_survival[n] + 1 / sqrt(n) * surv_data$estimated_survival[n-1] * sqrt(surv_data$estimated_var[n-1]) * q_alpha)
-  dplyr::select(surv_data, !estimated_var) #remove estimated variance from surv_data
+    SCB_low = pmax(0, estimated_survival - 1 / sqrt(n) * estimated_survival * sqrt(estimated_var) * q_alpha),
+    SCB_high = pmin(1, estimated_survival + 1 / sqrt(n) * estimated_survival * sqrt(estimated_var) * q_alpha)
+  )
+  surv_data$SCB_high[n] <- pmin(1, surv_data$estimated_survival[n] + 1 / sqrt(n) * surv_data$estimated_survival[n - 1] * sqrt(surv_data$estimated_var[n - 1]) * q_alpha)
+  dplyr::select(surv_data, !estimated_var) # remove estimated variance from surv_data
 }

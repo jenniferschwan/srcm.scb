@@ -43,7 +43,7 @@ SCB_subramanian_type3 <- function(surv_data,
   q_alpha <- boot_Ws[floor((1 - alpha) * n_boot)]
 
   inner_exponent <- 1 / sqrt(n) * q_alpha / (surv_data$estimated_survival * log(surv_data$estimated_survival))
-  inner_exponent[surv_data$estimated_survival == 0] = -Inf # weil sonst NaN hier Grenzwert einsetzen
+  inner_exponent[surv_data$estimated_survival == 0] <- -Inf # weil sonst NaN hier Grenzwert einsetzen
 
   surv_data %>%
     dplyr::mutate(
