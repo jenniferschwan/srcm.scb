@@ -22,6 +22,7 @@ Imports:
     ggplot2,
     magrittr,
     qwraps2,
-    stats
+    stats,
+    utils
 URL: https://github.com/jenniferschwan/sescbthesis
 BugReports: https://github.com/jenniferschwan/sescbthesis/issues

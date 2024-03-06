@@ -48,8 +48,8 @@ draw_SCB <- function(SCB, name = "SCB", title = "SCB",
 
 helper_SCB_add_front_and_back_values <- function(SCB) {
   SCB_low_at_0 <- 1 - (SCB$estimated_survival[1] - SCB$SCB_low[1])
-  SCB_high_end <- tail(SCB$SCB_high, n = 1)
-  SCB_survival_end <- tail(SCB$estimated_survival, n = 1)
+  SCB_high_end <- utils::tail(SCB$SCB_high, n = 1)
+  SCB_survival_end <- utils::tail(SCB$estimated_survival, n = 1)
   SCB %>%
     dplyr::add_row(
       time = 0, event = 1, rank = 0,
