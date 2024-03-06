@@ -12,7 +12,7 @@ SCB_width_at_quantiles <- function(SCB, quantiles){
 
   n <- nrow(SCB)
 
-  index_of_quantiles <- floor(quantiles * n)
+  index_of_quantiles <- floor(1 + quantiles * (n-1))
 
   SCB$SCB_high[index_of_quantiles] - SCB$SCB_low[index_of_quantiles]
 }
