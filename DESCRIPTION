@@ -1,4 +1,4 @@
-Package: srcm_scb
+Package: srcm.scb
 Type: Package
 Title: Calculate simultaneous confidence bands for survival functions with 
   bootstrap approaches and semiparametric estimators
@@ -24,5 +24,5 @@ Imports:
     qwraps2,
     stats,
     utils
-URL: https://github.com/jenniferschwan/srcm_scb
-BugReports: https://github.com/jenniferschwan/srcm_scb/issues
+URL: https://github.com/jenniferschwan/srcm.scb
+BugReports: https://github.com/jenniferschwan/srcm.scb/issues

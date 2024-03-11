@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2024 srcm_scb authors
+Copyright (c) 2024 srcm.scb authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

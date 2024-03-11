@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(srcm_scb)
+library(srcm.scb)
 
-test_check("srcm_scb")
+test_check("srcm.scb")
