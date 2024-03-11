@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(sescbthesis)
+library(srcm_scb)
 
-test_check("sescbthesis")
+test_check("srcm_scb")

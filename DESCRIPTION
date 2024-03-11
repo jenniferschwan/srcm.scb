@@ -1,11 +1,11 @@
-Package: sescbthesis
+Package: srcm_scb
 Type: Package
 Title: Calculate simultaneous confidence bands for survival functions with 
   bootstrap approaches and semiparametric estimators
 Version: 0.1.0
 Authors@R: person("Jennifer", "Schwan", email = "schwan@fh-aachen.de", role = c("aut", "cre"))
 Description: This package includes what is needed for my masters thesis.
-  This means different semiparamtertic estimators for survival functions, 
+  This means different semiparamtetric estimators for survival functions, 
   functions to calculate different types of simultaneous confidence bands, 
   function to plot these things as well as functions to calculate statistics 
   used to compare the scbs.
@@ -24,5 +24,5 @@ Imports:
     qwraps2,
     stats,
     utils
-URL: https://github.com/jenniferschwan/sescbthesis
-BugReports: https://github.com/jenniferschwan/sescbthesis/issues
+URL: https://github.com/jenniferschwan/srcm_scb
+BugReports: https://github.com/jenniferschwan/srcm_scb/issues
