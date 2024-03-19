@@ -24,6 +24,6 @@ sup_W2star_stat <- function(surv_data, boot_data) {
   sqrt(n) * max(
     abs((S1 - S2) / denominator)[-n],
     abs((S1 - c(1, S2[-n])) / denominator)[-n],
-    abs((c(1, S1[-n]) - S2) / denominator)[-n] # TODO!
+    abs((c(1, S1[-n]) - S2) / c(1, denominator[-n]))[-n] # TODO!
   )
 }
