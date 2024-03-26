@@ -1,4 +1,18 @@
-estimate_variance <- function(surv_data, mle, modelfunction, modelfunction_gradient) {
+#' Estimates the variance under srcm at all given times of the input sample
+#'
+#' @param surv_data the input sample, must contain columns "time" and "event"
+#' @param mle the mle of the given sample and the given model under srcm
+#' @param modelfunction the modelfunction to be used
+#' @param modelfunction_gradient the gradient of the modelfunction to be used
+#'
+#' @return the variance of the given sample at all surv_data$time
+#' @export
+#'
+#' @examples
+#' surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
+#' mle <- calculate_mle_srcm(surv_data, gph)
+#' estimate_variance_srcm(surv_data, mle, gph, gph_gradient)
+estimate_variance_srcm <- function(surv_data, mle, modelfunction, modelfunction_gradient) {
   checkmate::assert_names(names(surv_data), must.include = c("time", "event"))
 
   n <- nrow(surv_data)

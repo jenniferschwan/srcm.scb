@@ -2,13 +2,21 @@
 % Please edit documentation in R/twop_cloglog_gradient.R
 \name{twop_cloglog_gradient}
 \alias{twop_cloglog_gradient}
-\title{Title}
+\title{Returns the gradient values of the twop_cloglog model}
 \usage{
 twop_cloglog_gradient(t, params)
 }
 \arguments{
-\item{params}{}
+\item{t}{the input times}
+
+\item{params}{the 2 parameters for cloglog model}
+}
+\value{
+value of the twop_cloglog gradient at times t for params
 }
 \description{
-Title
+Returns the gradient values of the twop_cloglog model
+}
+\examples{
+twop_cloglog_gradient(0.5, c(1, 1))
 }

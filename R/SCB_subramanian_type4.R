@@ -1,16 +1,19 @@
-#' Title
+#' Calculates the SCB of type proposed 4 according to Subramanian
 #'
-#' @param surv_data
-#' @param estimatorfunction
-#' @param modelfunction
-#' @param modelfunction_gradient
-#' @param alpha
-#' @param n_boot
+#' @param surv_data the input data, must contain columns 'time' and 'event'
+#' @param estimatorfunction the plug-in estimator which is used to calculate the SCB
+#' @param modelfunction the modelfunction used for the srcm
+#' @param modelfunction_gradient the gradient of the modelfunction used for the srcm
+#' @param alpha confidence level
+#' @param n_boot number of bootstrap repetitions
 #'
-#' @return
+#' @return a tibble containing the columns 'time', 'event',
+#'          rank', 'estimated_survival', 'SCB_low' and 'SCB_high'
 #' @export
 #'
 #' @examples
+#' surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
+#' SCB_subramanian_type4(surv_data, estimator_dikta98, gph, gph_gradient, 0.05, 100)
 SCB_subramanian_type4 <- function(surv_data,
                                   estimatorfunction, modelfunction, modelfunction_gradient,
                                   alpha, n_boot) {
@@ -31,7 +34,7 @@ SCB_subramanian_type4 <- function(surv_data,
   surv_data <- estimatorfunction(surv_data, mle, modelfunction)
   n <- nrow(surv_data)
 
-  surv_data <- dplyr::mutate(surv_data, estimated_var = estimate_variance(surv_data, mle, modelfunction, modelfunction_gradient))
+  surv_data <- dplyr::mutate(surv_data, estimated_var = estimate_variance_srcm(surv_data, mle, modelfunction, modelfunction_gradient))
 
   boot_W2s <- sort(
     replicate(

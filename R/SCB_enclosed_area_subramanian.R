@@ -1,5 +1,4 @@
 #' Calculates the enclosed area of the given SCB along the lines of Subramanian
-#' "state the formula here"
 #'
 #' @param SCB the given SCB, must contain the columns 'time', 'SCB_low' and 'SCB_high'
 #'

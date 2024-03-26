@@ -2,13 +2,18 @@
 % Please edit documentation in R/SCB_width_at_quantiles.R
 \name{SCB_width_at_quantiles}
 \alias{SCB_width_at_quantiles}
-\title{Title}
+\title{Calculates the width of the given SCB at the given quantiles}
 \usage{
 SCB_width_at_quantiles(SCB, quantiles)
 }
 \arguments{
-\item{quantiles}{}
+\item{SCB}{the given SCB, must contain the columns 'estimated_survival', 'SCB_low' and 'SCB_high'}
+
+\item{quantiles}{the quantiles (values between 0 and 1) at which the width should be calculated}
+}
+\value{
+the widths of the given SCB at the given quantiles
 }
 \description{
-Title
+Calculates the width of the given SCB at the given quantiles
 }

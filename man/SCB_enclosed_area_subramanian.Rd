@@ -2,8 +2,7 @@
 % Please edit documentation in R/SCB_enclosed_area_subramanian.R
 \name{SCB_enclosed_area_subramanian}
 \alias{SCB_enclosed_area_subramanian}
-\title{Calculates the enclosed area of the given SCB along the lines of Subramanian
-"state the formula here"}
+\title{Calculates the enclosed area of the given SCB along the lines of Subramanian}
 \usage{
 SCB_enclosed_area_subramanian(SCB)
 }
@@ -15,5 +14,4 @@ the area enclosed by the given SCB
 }
 \description{
 Calculates the enclosed area of the given SCB along the lines of Subramanian
-"state the formula here"
 }

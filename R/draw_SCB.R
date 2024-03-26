@@ -1,15 +1,21 @@
-#' Title
+#' Draws the given Scb into a ggplot2::ggplot object
 #'
-#' @param SCB
-#' @param plt
-#' @param S_true
-#' @param x_lims
-#' @param y_lims
+#' @param SCB the SCB to be drawn, must contain columns "time", "estimated_survival", "SCB_low" and "SCB_high"
+#' @param name optional name with which the scb should be labeled (default "SCB")
+#' @param title optional title of the plot (default "SCB")
+#' @param plt optional: the plt object to which the plot should be added
+#' @param S_true optional: the true survival function
+#' @param x_lims optional: the x limits for the plot. if not given, they are set to (o, max(SCB$time))
+#' @param y_lims soptional: the y limits for the plot. if not given, they are set to (0, 1)
+#' @param my_color optional: the color to be used for the plot (default "red")
 #'
-#' @return
+#' @return the ggplot2::ggplot object containing the plot of the given SCB
 #' @export
 #'
 #' @examples
+#' surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
+#' SCB <- SCB_subramanian_type1(surv_data, estimator_dikta98, gph, 0.05, 100)
+#' draw_SCB(SCB)
 draw_SCB <- function(SCB, name = "SCB", title = "SCB",
                      plt = ggplot2::ggplot(),
                      S_true = NULL,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/draw_SCB.R
 \name{draw_SCB}
 \alias{draw_SCB}
-\title{Title}
+\title{Draws the given Scb into a ggplot2::ggplot object}
 \usage{
 draw_SCB(
   SCB,
@@ -16,8 +16,30 @@ draw_SCB(
 )
 }
 \arguments{
-\item{y_lims}{}
+\item{SCB}{the SCB to be drawn, must contain columns "time", "estimated_survival", "SCB_low" and "SCB_high"}
+
+\item{name}{optional name with which the scb should be labeled (default "SCB")}
+
+\item{title}{optional title of the plot (default "SCB")}
+
+\item{plt}{optional: the plt object to which the plot should be added}
+
+\item{S_true}{optional: the true survival function}
+
+\item{x_lims}{optional: the x limits for the plot. if not given, they are set to (o, max(SCB$time))}
+
+\item{y_lims}{soptional: the y limits for the plot. if not given, they are set to (0, 1)}
+
+\item{my_color}{optional: the color to be used for the plot (default "red")}
+}
+\value{
+the ggplot2::ggplot object containing the plot of the given SCB
 }
 \description{
-Title
+Draws the given Scb into a ggplot2::ggplot object
+}
+\examples{
+surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
+SCB <- SCB_subramanian_type1(surv_data, estimator_dikta98, gph, 0.05, 100)
+draw_SCB(SCB)
 }

@@ -21,7 +21,7 @@ SCB_subramanian_type3(
 
 \item{alpha}{confidence level}
 
-\item{n_boot}{number of bootstrap repititions}
+\item{n_boot}{number of bootstrap repetitions}
 }
 \value{
 a tibble containing the columns 'time', 'event',

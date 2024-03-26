@@ -4,7 +4,7 @@
 #' @param estimatorfunction the plug-in estimator which is used to calculate the SCB
 #' @param modelfunction the modelfunction used for the srcm
 #' @param alpha confidence level
-#' @param n_boot number of bootstrap repititions
+#' @param n_boot number of bootstrap repetitions
 #'
 #' @return a tibble containing the columns 'time', 'event',
 #'          rank', 'estimated_survival', 'SCB_low' and 'SCB_high'

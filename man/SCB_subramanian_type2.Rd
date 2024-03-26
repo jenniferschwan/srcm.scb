@@ -2,7 +2,7 @@
 % Please edit documentation in R/SCB_subramanian_type2.R
 \name{SCB_subramanian_type2}
 \alias{SCB_subramanian_type2}
-\title{Title}
+\title{Calculates the SCB of type proposed 2 according to Subramanian}
 \usage{
 SCB_subramanian_type2(
   surv_data,
@@ -14,8 +14,26 @@ SCB_subramanian_type2(
 )
 }
 \arguments{
-\item{n_boot}{}
+\item{surv_data}{the input data, must contain columns 'time' and 'event'}
+
+\item{estimatorfunction}{the plug-in estimator which is used to calculate the SCB}
+
+\item{modelfunction}{the modelfunction used for the srcm}
+
+\item{modelfunction_gradient}{the gradient of the modelfunction used for the srcm}
+
+\item{alpha}{confidence level}
+
+\item{n_boot}{number of bootstrap repetitions}
+}
+\value{
+a tibble containing the columns 'time', 'event',
+rank', 'estimated_survival', 'SCB_low' and 'SCB_high'
 }
 \description{
-Title
+Calculates the SCB of type proposed 2 according to Subramanian
+}
+\examples{
+surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
+SCB_subramanian_type2(surv_data, estimator_dikta98, gph, gph_gradient, 0.05, 100)
 }
