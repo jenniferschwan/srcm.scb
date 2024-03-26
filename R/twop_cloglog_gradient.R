@@ -9,5 +9,5 @@
 #' @examples
 #' twop_cloglog_gradient(0.5, c(1, 1))
 twop_cloglog_gradient <- function(t, params) {
-  1 - exp(-exp(params[1] + params[2] * t) + params[1] + params[2] * t) * c(1, t)
+  exp(-exp(params[1] + params[2] * t) + params[1] + params[2] * t) * c(1, t)
 }

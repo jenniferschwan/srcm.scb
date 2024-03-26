@@ -38,8 +38,8 @@ test_that("SCB_width_subramanian() gives expected output for a simple SCB with f
 test_that("SCB_width_subramanian() gives expected output for a more complex SCB with fixed width", {
   SCB <- dplyr::tibble(
     estimated_survival = c(0.9, 0.7, 0.4, 0.2, 0.1),
-    SCB_low = rep(0, n = 5),
-    SCB_high = rep(1, n = 5)
+    SCB_low = rep(0, times = 5),
+    SCB_high = rep(1, times = 5)
   )
 
   expect_equal(SCB_width_subramanian(SCB), 0.9)
@@ -49,7 +49,7 @@ test_that("SCB_width_subramanian() gives expected output for a more complex SCB 
   SCB <- dplyr::tibble(
     estimated_survival = c(0.9, 0.7, 0.4, 0.2, 0.1),
     SCB_low = c(0.8, 0.6, 0.35, 0.1, 0),
-    SCB_high = rep(1, n = 5)
+    SCB_high = rep(1, times = 5)
   )
 
   expect_equal(SCB_width_subramanian(SCB), 0.575)

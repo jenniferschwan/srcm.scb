@@ -38,8 +38,8 @@ test_that("SCB_enclosed_area_subramanian() gives expected output for a simple SC
 test_that("SCB_enclosed_area_subramanian() gives expected output for a more complex SCB with fixed width", {
   SCB <- dplyr::tibble(
     time = c(0.1, 0.2, 0.4, 0.6, 0.9),
-    SCB_low = rep(0, n = 5),
-    SCB_high = rep(1, n = 5)
+    SCB_low = rep(0, times = 5),
+    SCB_high = rep(1, times = 5)
   )
 
   expect_equal(SCB_enclosed_area_subramanian(SCB), 0.8)
@@ -49,7 +49,7 @@ test_that("SCB_enclosed_area_subramanian() gives expected output for a more comp
   SCB <- dplyr::tibble(
     time = c(0.1, 0.2, 0.4, 0.6, 0.9),
     SCB_low = c(0.8, 0.6, 0.35, 0.1, 0),
-    SCB_high = rep(1, n = 5)
+    SCB_high = rep(1, times = 5)
   )
 
   expect_equal(SCB_enclosed_area_subramanian(SCB), 0.5)

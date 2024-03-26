@@ -1,7 +1,7 @@
 test_that("gph_gradient() returns expected positive values", {
   expect_equal(gph_gradient(1, par = c(1, 1)), c(0.25, 0))
-  expect_equal(gph_gradient(3, par = c(5, 3)), c(27/1024, 135/1024*log(3)))
-  expect_equal(gph_gradient(2, par = c(-200, 10)), c(16/10609, -3200/10609*log(2)))
+  expect_equal(gph_gradient(3, par = c(5, 3)), c(27 / 1024, 135 / 1024 * log(3)))
+  expect_equal(gph_gradient(2, par = c(-200, 10)), c(16 / 10609, -3200 / 10609 * log(2)))
 })
 
 test_that("gph_gradient() returns zero", {
