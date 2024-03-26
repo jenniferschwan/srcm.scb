@@ -4,14 +4,14 @@
 \alias{sample_2stage}
 \title{Generates a bootstrap sample with the two-stage bootstrap method}
 \usage{
-sample_2stage(surv_data, mle, modelfunction)
+sample_2stage(surv_data, modelfunction, mle)
 }
 \arguments{
 \item{surv_data}{the input sample which is resampled}
 
-\item{mle}{the mle of surv_data for the modelfunction}
-
 \item{modelfunction}{the modelfunction used for resampling under srcm}
+
+\item{mle}{the mle of surv_data for the modelfunction}
 }
 \value{
 a bootstrap sample
@@ -22,5 +22,5 @@ Generates a bootstrap sample with the two-stage bootstrap method
 \examples{
 surv_data <- dplyr::tibble(time = c(1:5), event = c(1, 0, 1, 0, 1))
 mle <- calculate_mle_srcm(surv_data, gph)
-sample_2stage(surv_data, mle, gph)
+sample_2stage(surv_data, gph, mle)
 }

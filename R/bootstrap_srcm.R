@@ -1,5 +1,4 @@
-#' Bootstraps under SRCM with the 2-stage bootstrap method
-#' @noRd
+#' Bootstraps statfunction under SRCM with the 2-stage bootstrap method
 #'
 #' @param statfunction the statistics function which is called with surv_data and boot_data
 #' @param surv_data the input data, must contain columns 'time', 'event' and 'estimated_survival'
@@ -12,7 +11,7 @@
 bootstrap_srcm <- function(statfunction, surv_data, mle, estimatorfunction, modelfunction) {
   checkmate::assert_names(names(surv_data), must.include = c("time", "event", "estimated_survival"))
 
-  boot_data <- sample_2stage(surv_data, mle, modelfunction)
+  boot_data <- sample_2stage(surv_data, modelfunction, mle)
   boot_mle <- calculate_mle_srcm(boot_data, modelfunction)
   boot_data <- estimatorfunction(boot_data, boot_mle, modelfunction)
 
