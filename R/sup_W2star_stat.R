@@ -21,5 +21,5 @@ sup_W2star_stat <- function(surv_data, boot_data) {
 
   denominator <- S1 * sqrt(surv_data$estimated_var)
 
-  sqrt(n) * max(abs((S1 - S2) / denominator), na.rm = TRUE)
+  sqrt(n) * max(abs(S1/denominator-S2/denominator), na.rm = TRUE)
 }
