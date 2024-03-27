@@ -19,5 +19,5 @@ sup_Wstar_stat <- function(surv_data, boot_data) {
     }
   )
 
-  sqrt(n) * max(abs(S1 - S2), abs(S1 - c(1, S2[-n])), abs(c(1, S1[-n]) - S2))
+  sqrt(n) * max(abs(S1 - S2), na.rm = TRUE)
 }
