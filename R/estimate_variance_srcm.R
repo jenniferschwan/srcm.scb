@@ -1,6 +1,6 @@
 #' Estimates the variance under srcm at all given times of the input sample
 #'
-#' @param surv_data the input sample, must contain columns "time" and "event"
+#' @param surv_data the input sample, must contain columns "time"
 #' @param mle the mle of the given sample and the given model under srcm
 #' @param modelfunction the modelfunction to be used
 #' @param modelfunction_gradient the gradient of the modelfunction to be used
@@ -13,7 +13,7 @@
 #' mle <- calculate_mle_srcm(surv_data, gph)
 #' estimate_variance_srcm(surv_data, mle, gph, gph_gradient)
 estimate_variance_srcm <- function(surv_data, mle, modelfunction, modelfunction_gradient) {
-  checkmate::assert_names(names(surv_data), must.include = c("time", "event"))
+  checkmate::assert_names(names(surv_data), must.include = c("time"))
 
   n <- nrow(surv_data)
 
